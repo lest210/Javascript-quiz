@@ -61,7 +61,8 @@ startGame = () => {
 getNewQuestion = () => {
 
   if(availableQuestions.length ===0 || questionCounter > MAX_QUESTIONS) {
-    return window.location.assign("/end.html");
+    localStorage.setItem('mostRecentScore', score);
+    return window.location.assign("./end.html");
   }
 
   questionCounter++;
@@ -94,6 +95,10 @@ choices.forEach(choice => {
     const classToApply = 
       selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
+        if(classToApply === "correct"){
+          incrementScore(CORRECT_BONUS);
+        }
+
         selectedChoice.parentElement.classList.add(classToApply);
 
         setTimeout(() => {
@@ -103,7 +108,10 @@ choices.forEach(choice => {
 
   });
 });
-
+incrementScore = num => {
+  score += num;
+  scoreText.innerText = score;
+};
 startGame();
 
 
