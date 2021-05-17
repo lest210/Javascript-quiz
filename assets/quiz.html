@@ -9,9 +9,26 @@
     <link rel="stylesheet" href="quiz.css" />
 </head>
 <body>
-    <script src="quiz.js"></script>
-    <div class="continer">
+    <div class="container">
         <div id="game" class="justify-center flex-column">
+            <div id="hud">
+                <div id="hud-item">
+                   <p class="hud-prefix">
+                       Question
+                   </p>
+                    <h1 class="hud-main-text" id="questionCounter">
+                        
+                    </h1>
+                    <div id="hud-item">
+                        <p class="hud-prefix">
+                            Score
+                        </p>
+                         <h1 class="hud-main-text" id="score">
+                             0
+                         </h1>
+                   
+                </div>
+            </div>
             <h2 id= "question">Question 1 </h2>
             <div class="choice-container">
                 <p class="choice-prefix">A</p>
@@ -31,5 +48,6 @@
             </div>
         </div>
     </div>
+    <script src="quiz.js"></script>
 </body>
 </html>
